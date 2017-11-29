@@ -1,0 +1,10 @@
+
+var myList = [
+  ["Pain au lait",4],
+  ["Calin",3],
+  ["Chocolat",7],
+  ["Oignon",9],
+  ["Sucre",1]
+];
+
+
