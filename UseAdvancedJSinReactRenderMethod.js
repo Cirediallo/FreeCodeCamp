@@ -61,11 +61,7 @@ class MagicEightBall extends React.Component {
           Ask the Magic Eight Ball!
         </button><br />
         <h3>Answer:</h3>
-        <p>
-          { /* change code below this line */ }
-          {answer}
-          { /* change code above this line */ }
-        </p>
+        <p>{answer}</p>
       </div>
     );
   }
