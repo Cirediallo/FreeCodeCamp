@@ -29,6 +29,8 @@ class DisplayMessages extends React.Component {
         <input type="text" onChange={this.handleChange} value={this.state.input} />
         <button onClick={this.submitMessage}>Submit</button>
         <ul>
+          {/* <li>{this.state.input} </li> */}
+          {/* ===  OR  === */}
           <li>{this.state.input}</li>
         </ul>
         { /* change code above this line */ }
