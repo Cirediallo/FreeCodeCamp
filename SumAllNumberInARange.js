@@ -1,10 +1,11 @@
-  let min = Math.min(...arr);
-  let max = Math.max(...arr);
+function sumAll(arr){
   let sum = 0;
-  for(let i = min; i <= max; i++){
+  for(let i = Math.min(...arr); i <= Math.max(...arr); i++){
     sum += i;
   }
   return sum;
+}
+  
   /*
     ==== SOLUTION FROM FCC
   {
@@ -17,10 +18,6 @@
     var sum = (lastNum - firstNum + 1) * (firstNum + lastNum) / 2;
     return sum;
   },
-  {
-    for (var i = Math.min(...arr); i <= Math.max(...arr); i++){
-        sum += i;
-    }
-  }
+  
     
   */
