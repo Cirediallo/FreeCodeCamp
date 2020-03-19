@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function largestOfFour(arr) {
   /et res = [];
   for(let i = 0; i < arr.length; i++){
@@ -19,6 +5,7 @@ function largestOfFour(arr) {
   }
   return res
   
+  // OR
   
   return arr.map(function(group) {
     return group.reduce(function(prev, current) {
