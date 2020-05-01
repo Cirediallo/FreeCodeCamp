@@ -1,18 +1,19 @@
 function findLongestWordLength(str) {
-  /*
-  let lngest = "";
-  let t = str.split(' ');
-  for(let i = 0; i < t.length; i++){
-    if(t[i].length > lngest.length){
-      lngest = t[i];
-    }
+  // ======== Naïve form
+  let s = str.split(" ")
+  let great = s[0].length;
+  for(let i = 1; i < s.length; i++){
+    if(s[i].length > great)
+      great = s[i].length
   }
-  return lngest.length;
-  */
+  return great;
   
-  // === With reduce
+  // ======== With reduce
   return str.split(' ')
     .reduce(function(x, y) {
       return Math.max(x, y.length)
     }, 0)
+  
+  // ======== With map
+  return Math.max(...str.split(' ').map(elt => elt.length))
 }
