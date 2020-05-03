@@ -31,6 +31,8 @@ function getIndexToIns(arr, num) {
   arr.push(num)
   return arr.sort((a,b) => a - b).indexOf(num)
   
+  // ========== With filter
+  return arr.filter(val => num > val).length;
 }
 
 getIndexToIns([10, 20, 30, 40, 50],35);
