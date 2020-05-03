@@ -1,5 +1,5 @@
 function getIndexToIns(arr, num) {
-  // Find my place in this sorted array.
+  // ========== Naïve way
   arr.sort((a,b) => a -b);
   let rep;
   let x = arr[0];
@@ -15,21 +15,22 @@ function getIndexToIns(arr, num) {
     }
   }
   return rep;
-}
 
-//OR
-
-function getIndexToIns(arr, num) {
-  arr.sort(function(a, b) {
+  // ==== or
+  arr.sort(function(a, b){
     return a - b;
   });
-
-  for (var a = 0; a < arr.length; a++) {
-    if (arr[a] >= num)
-      return a;
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] >= num){
+      return i;
+    }
   }
-
   return arr.length;
+  
+  // ========== With sort and indexOf
+  arr.push(num)
+  return arr.sort((a,b) => a - b).indexOf(num)
+  
 }
 
 getIndexToIns([10, 20, 30, 40, 50],35);
