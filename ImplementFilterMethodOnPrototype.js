@@ -1,6 +1,5 @@
-var s = [23, 65, 98, 5];
-
 Array.prototype.myFilter = function(callback){
+  // ========== With forEach
   var newArray = [];
   
   this.forEach((elt) => {
@@ -13,6 +12,13 @@ Array.prototype.myFilter = function(callback){
 
 };
 
-var new_s = s.myFilter(function(item){
-  return item % 2 === 1;
-});
+// ========== With for loop
+Array.prototype.myFilter = function(callback){
+  var newArray = []
+  for(let i = 0; i < this.length; i++){
+    if(callback(this[i])){
+      newArray.push(this[i])
+    }
+  }
+  return newArray;
+};
