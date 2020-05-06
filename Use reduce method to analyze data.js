@@ -13,6 +13,13 @@ function getRating(watchList){
   let total = watchList.filter(elt => elt.Director === "Christopher Nolan")
                        .map(obj => parseFloat(obj.imdbRating)).reduce((a,b) => a +b);
 
-  let averageRating =  total / watchList.filter(elt => elt.Director === "Christopher Nolan").length;
+  let averageRating =  total / watchList.filter(elt => elt.Director === "Christopher Nolan").length
+  
+  // ========== 3rd Way
+  let averageRating = watchList.filter((elt) => elt.Director == "Christopher Nolan").map(function(elt) {
+  return Number(elt.imdbRating);
+  }).reduce(
+    (acc, cur) => acc + cur
+  ) / watchList.filter((elt) => elt.Director == "Christopher Nolan").length;
 
 }
