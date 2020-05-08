@@ -17,7 +17,7 @@ function diffArray(arr1, arr2) {
     return !(arr1.includes(elt) && arr2.includes(elt));
   });
   
-  // ========== By using another function
+  // ========== Declarative solution by using another function
   return [...diff(arr1, arr2), ...diff(arr2, arr1)];
 
   function diff(a, b) {
