@@ -16,4 +16,29 @@ function whatIsInAName(collection, source) {
     else{return false;}
   })
   return arr;
+  
+  // ========== OR
+  let srcKeys = Object.keys(source);
+
+  return collection.filter(function(obj) {
+    return srcKeys.every(function(key) {
+      return obj.hasOwnProperty(key) && obj[key] === source[key];
+    });
+  });
+  
+  
+  
+  // ========== With map and reduce
+  let srcKeys = Object.keys(source);
+
+  // filter the collection
+  return collection.filter(function(obj) {
+    return srcKeys
+      .map(function(key) {
+        return obj.hasOwnProperty(key) && obj[key] === source[key];
+      })
+      .reduce(function(a, b) {
+        return a && b;
+      });
+  });
 }
