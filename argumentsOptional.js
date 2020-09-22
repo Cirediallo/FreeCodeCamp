@@ -54,4 +54,4 @@ function addTogether() {
     ? args.reduce((acc, n) => (acc += n), 0)
     : n => (typeof n === "number" ? n + args[0] : undefined);
 }
-addTogether(2,3);
+
